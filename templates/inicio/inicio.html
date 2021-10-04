@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>listas de motos</h1>
+<table border="2">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Mas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for moto in Moto %}
+        <tr>
+            <td>{{ moto.marca}}</td>
+            <td>{{ moto.modelo}}</td>
+            <td>{{ moto.color}}</td>
+            <td><a href="{% url 'moto_detalles' moto.id %}">VER DETALLES</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    
+{% endblock contenido %}
+    

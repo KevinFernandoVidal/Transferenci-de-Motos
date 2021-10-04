@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<table border="2">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Observaciones</th>
+            <th>Mas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in mantenimiento %}
+        <tr>
+            <td>{{ l.nombre}}</td>
+            <td>{{ l.fecha}}</td>
+            <td>{{ l.observaciones}}</td>
+            <td><a href="{% url 'mantenimiento_editar' id_mantenimiento=l.id %}">EDITAR</a> <a href="{% url 'mantenimiento_eliminar' id_mantenimiento=l.id %}">ELIMINAR</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

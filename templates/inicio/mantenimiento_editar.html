@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form_edit_mant}}
+        <input type="submit" value="Editar">
+    </form>
+{% endblock contenido %}

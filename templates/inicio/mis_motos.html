@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block contenido %}
+<h1>listas de motos</h1>
+<table border="2">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Opciones</th>
+            <th>Mas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in lista %}
+        <tr>
+            <td>{{ l.marca}}</td>
+            <td>{{ l.modelo}}</td>
+            <td>{{ l.color}}</td>
+            <td><a href="{% url 'moto_editar' l.id %}">EDITAR</a> <a href="{% url 'moto_eliminar' l.id %}">ELIMINAR</a></td>
+            <td><a href="{% url 'moto_detalles' l.id %}">VER DETALLES</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

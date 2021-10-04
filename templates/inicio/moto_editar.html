@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <form action="." method="GET">
+        {% csrf_token %}
+        {{form_edit_moto.as_p}}
+        <input type="submit" value="Editar">
+    </form>
+{% endblock contenido %}

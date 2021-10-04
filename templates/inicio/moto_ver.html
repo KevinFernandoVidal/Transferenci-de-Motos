@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <h2>{{object.marca " " object.modelo}}</h2>
+    <img src="/media/{{object.foto}}" width="100" height="100" alt="">
+    <h5>Color = {{object.color}}</h5>
+    <h5>Placa = {{object.placa}}</h5>
+    <a href="{% url 'mantenimiento_agregar' id_moto=object.id %}">Agregar Mantenimiento</a>
+    <a href="{% url 'mantenimiento' id_moto=object.id %}">Ver Mantenimiento</a>
+    {% endblock contenido %}
